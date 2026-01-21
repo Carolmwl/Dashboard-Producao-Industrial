@@ -1,0 +1,100 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.0.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY21SU07",
+      "reportVersionAtImport": {
+        "visual": "1.8.61",
+        "report": "2.0.61",
+        "page": "1.3.61"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY21SU07",
+          "path": "BaseThemes/CY21SU07.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Produdizo8319870319465348.png",
+          "path": "Produdizo8319870319465348.png",
+          "type": "Image"
+        },
+        {
+          "name": "Rejeitado6173604169788514.png",
+          "path": "Rejeitado6173604169788514.png",
+          "type": "Image"
+        },
+        {
+          "name": "Hora_Produtiva7351834093706571.png",
+          "path": "Hora_Produtiva7351834093706571.png",
+          "type": "Image"
+        },
+        {
+          "name": "Hora_Parada26022967386037554.png",
+          "path": "Hora_Parada26022967386037554.png",
+          "type": "Image"
+        },
+        {
+          "name": "Neon_Yellow_and_Black_Modern_B59638779606575.png",
+          "path": "Neon_Yellow_and_Black_Modern_B59638779606575.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true
+  },
+  "slowDataSourceSettings": {
+    "isCrossHighlightingDisabled": false,
+    "isSlicerSelectionsButtonEnabled": false,
+    "isFilterSelectionsButtonEnabled": false,
+    "isFieldWellButtonEnabled": false,
+    "isApplyAllButtonEnabled": false
+  }
+}

@@ -1,0 +1,24 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["BaseProdução"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DateTableTemplate_1063c3da-d35f-4772-bdbb-c7da8cd69bc8
+ref table BaseProdução
+ref table LocalDateTable_b41ca1f1-c029-41ec-9049-7b3e13c49996
+ref table LocalDateTable_c4a2a1a1-f196-44ca-8faa-ac524ee03f5c
+ref table LocalDateTable_e32e9d1e-d6f6-4d76-9080-b7cab5424d43
+ref table Calendario
+ref table LocalDateTable_e1f8c767-87ee-49b8-bf5b-e72c2331b2af
+
+ref cultureInfo pt-BR
+

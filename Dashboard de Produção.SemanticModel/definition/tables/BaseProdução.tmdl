@@ -1,0 +1,204 @@
+table BaseProdução
+	lineageTag: 188cda74-f264-4276-b4b7-a1af80050aea
+
+	measure Disponibilidade = ([Horas Produtivas])/([Horas Produtivas] + [Horas Paradas])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 14c5b38e-e548-47f3-bc49-409e7f8b31b5
+
+		changedProperty = FormatString
+
+	measure 'Horas Paradas' = CALCULATE(SUM('BaseProdução'[Total Horas]), 'BaseProdução'[Ocorrência]<>BLANK())
+		formatString: #,0
+		lineageTag: 7e7c2219-1d10-4c80-a5c3-cf619dec0819
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Horas Produtivas' = CALCULATE(SUM('BaseProdução'[Total Horas]), 'BaseProdução'[Ocorrência]=BLANK())
+		formatString: #,0
+		lineageTag: 7fb2a44c-2376-46db-ad4a-47953aa7284a
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Total Aprovado' = SUM('BaseProdução'[Qtd Aprovada])
+		formatString: #,0
+		lineageTag: c4b4968c-3ffe-49ec-87d7-48299ac95b9c
+
+		changedProperty = FormatString
+
+	measure Qualidade = ([Total Aprovado])/([Total Aprovado] + [Total Rejeitado])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: e55868f8-b556-4fa2-9e11-ff9b0b0d6167
+
+		changedProperty = FormatString
+
+	measure 'Total Rejeitado' = SUM('BaseProdução'[Qtd Rejeitada])
+		formatString: #,0
+		lineageTag: 260744ef-0792-4d57-9e2a-1c8b2ae9bb30
+
+		changedProperty = FormatString
+
+	measure Horas = SUM('BaseProdução'[Total Horas])
+		formatString: #,0
+		lineageTag: 30735534-2eec-44bf-af84-a32b088f7fcd
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'Qtd Rejeitada'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f3e5d97-f70b-49e9-ad92-9fd3f444df74
+		summarizeBy: sum
+		sourceColumn: Qtd Rejeitada
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Horas'
+		dataType: double
+		lineageTag: da198c39-e45d-4fd9-be75-dd8f190e07d9
+		summarizeBy: sum
+		sourceColumn: Total Horas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Numero Ordem'
+		dataType: int64
+		formatString: 0
+		lineageTag: c124abfb-5cb1-428e-a84c-6c5f74fc59d6
+		summarizeBy: sum
+		sourceColumn: Numero Ordem
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data Inicio'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 194cacc5-740f-4e6d-9d4b-692b36dae2af
+		summarizeBy: none
+		sourceColumn: Data Inicio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Hora Inicio'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 7add6898-9a30-457a-b5f0-3f6f92847ab8
+		summarizeBy: none
+		sourceColumn: Hora Inicio
+
+		variation Variation
+			isDefault
+			relationship: 76df1980-5a71-44ff-9ae4-f44cdf1444ac
+			defaultHierarchy: LocalDateTable_c4a2a1a1-f196-44ca-8faa-ac524ee03f5c.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data Fim'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: dd8f79d4-5020-4a7b-8510-670d77f9d7d4
+		summarizeBy: none
+		sourceColumn: Data Fim
+
+		variation Variation
+			isDefault
+			relationship: ac893532-0646-4af6-863e-b3b408cb819d
+			defaultHierarchy: LocalDateTable_b41ca1f1-c029-41ec-9049-7b3e13c49996.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Hora Fim'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 74eda947-4f85-41ca-98ac-8fdd18a204cb
+		summarizeBy: none
+		sourceColumn: Hora Fim
+
+		variation Variation
+			isDefault
+			relationship: 5875f82b-b929-4889-8c9e-bcdd6ca6290e
+			defaultHierarchy: LocalDateTable_e32e9d1e-d6f6-4d76-9080-b7cab5424d43.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Operador
+		dataType: string
+		lineageTag: f3ecc9a6-d5a9-4761-bb12-b129a9d5957c
+		summarizeBy: none
+		sourceColumn: Operador
+
+		annotation SummarizationSetBy = Automatic
+
+	column Produto
+		dataType: string
+		lineageTag: ded479fd-d0e3-412a-b4ba-c927d9a42850
+		summarizeBy: none
+		sourceColumn: Produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ocorrência
+		dataType: string
+		lineageTag: 04210b6b-df8d-4638-badc-c535c4e060d7
+		summarizeBy: none
+		sourceColumn: Ocorrência
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Qtd Aprovada'
+		dataType: int64
+		formatString: 0
+		lineageTag: 36c9467f-a32b-4aa8-ae53-831ce8301bf1
+		summarizeBy: sum
+		sourceColumn: Qtd Aprovada
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nome do Mês'
+		dataType: string
+		lineageTag: 170e44a7-c102-49df-86ad-5f408363820b
+		summarizeBy: none
+		sourceColumn: Nome do Mês
+		sortByColumn: Mês
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mês
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c9e5e83-4557-48aa-8cad-378da17b9d4f
+		summarizeBy: sum
+		sourceColumn: Mês
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BaseProdução-19bceb5c-043a-496f-88ed-1c2179f39d8f = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\carol\OneDrive\Desktop\Estudos\Hashtag\Imersão 4 dias Power BI\Aula 2\Produção.xlsx"), null, true),
+				    BaseProdução_Sheet = Fonte{[Item="BaseProdução",Kind="Sheet"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(BaseProdução_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Numero Ordem", Int64.Type}, {"Operador", type text}, {"Produto", type text}, {"Ocorrência", type text}, {"Data Inicio", type date}, {"Hora Inicio", type datetime}, {"Data Fim", type date}, {"Hora Fim", type datetime}, {"Total Horas", type number}, {"Qtd Aprovada", Int64.Type}, {"Qtd Rejeitada", Int64.Type}}),
+				    #"Personalização Adicionada" = Table.AddColumn(#"Tipo Alterado", "Nome do Mês", each Text.Proper(Date.MonthName([Data Inicio]))),
+				    #"Mês Inserido" = Table.AddColumn(#"Personalização Adicionada", "Mês", each Date.Month([Data Inicio]), Int64.Type)
+				in
+				    #"Mês Inserido"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegação
+

@@ -1,0 +1,24 @@
+relationship ac893532-0646-4af6-863e-b3b408cb819d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BaseProdução.'Data Fim'
+	toColumn: LocalDateTable_b41ca1f1-c029-41ec-9049-7b3e13c49996.Date
+
+relationship 76df1980-5a71-44ff-9ae4-f44cdf1444ac
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BaseProdução.'Hora Inicio'
+	toColumn: LocalDateTable_c4a2a1a1-f196-44ca-8faa-ac524ee03f5c.Date
+
+relationship 5875f82b-b929-4889-8c9e-bcdd6ca6290e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: BaseProdução.'Hora Fim'
+	toColumn: LocalDateTable_e32e9d1e-d6f6-4d76-9080-b7cab5424d43.Date
+
+relationship d51f7f5e-f457-4c1d-a9b9-6d8bd83da491
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendario.Date
+	toColumn: LocalDateTable_e1f8c767-87ee-49b8-bf5b-e72c2331b2af.Date
+
+relationship 32e66b71-f4c4-4eb2-55b7-d8f7bb904bca
+	fromColumn: BaseProdução.'Data Inicio'
+	toColumn: Calendario.Date
+

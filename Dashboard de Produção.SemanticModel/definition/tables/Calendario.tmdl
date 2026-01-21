@@ -1,0 +1,41 @@
+table Calendario
+	lineageTag: 6cac5c4b-b911-422f-a654-4e1695eaf0a9
+
+	column Date
+		formatString: Short Date
+		lineageTag: 693fb3e6-37d3-42ea-b19f-b31c0523ca85
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: d51f7f5e-f457-4c1d-a9b9-6d8bd83da491
+			defaultHierarchy: LocalDateTable_e1f8c767-87ee-49b8-bf5b-e72c2331b2af.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Mês Número' = Calendario[Date].[MonthNo]
+		formatString: 0
+		lineageTag: 4850aaec-42b6-4040-8b99-111f0a3a31e4
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mês Nome' = Calendario[Date].[Mês]
+		lineageTag: c261cc6e-af41-4efc-999e-1410c0199f9a
+		summarizeBy: none
+		sortByColumn: 'Mês Número'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	partition Calendario = calculated
+		mode: import
+		source = CALENDAR(MIN('BaseProdução'[Data Inicio]),MAX('BaseProdução'[Data Fim]))
+
+	annotation PBI_Id = 44f7c083a87e44bfa16b3ab9a342f593
+

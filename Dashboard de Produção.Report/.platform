@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Dashboard de Produção"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5658b982-4f6b-4948-b69c-7a8bd4c9c451"
+  }
+}
