@@ -5,7 +5,7 @@ Este projeto apresenta uma solução de Business Intelligence desenvolvida em **
 
 A solução transforma dados operacionais em insights estratégicos para a redução de desperdícios e a otimização da capacidade produtiva da planta.
 
-![Dashboard de Produção Industrial](dashboard_producao.jpg)
+![Dashboard de Produção Industrial](dashboard_producao.png)
 
 ## 🎯 Problema de Negócio e Solução
 O gerenciamento de uma planta industrial exige controle rigoroso sobre o tempo de máquina e a perda de materiais. Sem uma visão centralizada, é difícil identificar quais produtos estão gerando mais prejuízo ou em quais meses a disponibilidade das máquinas caiu.
