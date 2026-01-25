@@ -34,10 +34,11 @@ O dashboard utiliza indicadores críticos para a gestão da produção:
 * **Análise Temporal Completa:** Segmentação por Ano, Mês e Dia para rastreabilidade total.
 * **Indicadores de Status (Gauges):** Visualização imediata do atingimento de metas de qualidade e eficiência.
 
-## 🚀 Como Executar o Projeto
-1. Clone este repositório.
-2. Certifique-se de ter o **Power BI Desktop** instalado.
-3. Abra o arquivo `.pbix` para interagir com os dados.
+## 🚀 Como Interagir com o Projeto
+
+<a href="https://app.powerbi.com/groups/me/reports/80cde635-4b4a-4794-9158-0ed5314666e0/ReportSection?experience=power-bi" target="_blank">
+    <img src="https://img.shields.io/badge/Visualizar%20Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Ver Dashboard no Power BI">
+</a>
 
 ---
 *Desenvolvido por [Caroline Mann Wharton Luzio](https://www.linkedin.com/in/caroline-mann-wharton-luzio/)*
