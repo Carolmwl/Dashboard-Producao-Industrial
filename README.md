@@ -36,7 +36,7 @@ O dashboard utiliza indicadores críticos para a gestão da produção:
 
 ## 🚀 Como Interagir com o Projeto
 
-<a href="https://app.powerbi.com/groups/me/reports/80cde635-4b4a-4794-9158-0ed5314666e0/ReportSection?experience=power-bi" target="_blank">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiNWIyMmM4ZGItMTlmMy00OTM0LWJhMDctOThjMTc0ZTllZjRjIiwidCI6IjM4MzYyNjc3LTY2OTQtNDk5OS1hNDA4LTMxYjAwYjIyNGZlMCJ9" target="_blank">
     <img src="https://img.shields.io/badge/Visualizar%20Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black" alt="Ver Dashboard no Power BI">
 </a>
 
